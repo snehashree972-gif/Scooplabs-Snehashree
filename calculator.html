@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f2f2f2;
+}
+        
+        input {
+            padding: 8px;
+            margin: 10px;
+            width: 100px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color:aqua
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+         Number 1 :
+        <input type="text" id="num1" >
+        <br>
+         Number 2 : 
+        <input type="text" id="num2" >
+        <br>
+
+        <button onclick="add()">Addition</button>
+        <button onclick="subtract()">Subtraction</button>
+        <br>
+        <button onclick="multiply()">Multiplication</button>
+        <button onclick="divide()">Division</button>
+    </div>
+
+    <script>
+        function getNumbers() {
+            let number1 = parseFloat(document.getElementById('num1').value);
+            let number2 = parseFloat(document.getElementById('num2').value);
+            return { number1, number2 };
+        }
+
+        function add() {
+            let { number1, number2 } = getNumbers();
+            alert("Result: " + (number1 + number2));
+        }
+
+        function subtract() {
+            let { number1, number2 } = getNumbers();
+            alert("Result: " + (number1 - number2));
+        }
+
+        function multiply() {
+            let { number1, number2 } = getNumbers();
+            alert("Result: " + (number1 * number2));
+        }
+
+        function divide() {
+            let { number1, number2 } = getNumbers();
+            if (number2 === 0) {
+                alert("Cannot divide by zero!");
+            } else {
+                alert("Result: " + (number1 / number2));
+            }
+        }
+    </script>
+
+</body>
+</html>
